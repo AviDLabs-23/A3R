@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A3R - Premium Business Solutions</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgo8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNjBhNWZhO3N0b3Atb3BhY2l0eToxIiAvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNhNzhiZmE7c3RvcC1vcGFjaXR5OjEiIC8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudCkiLz4KPHN2ZyB4PSI2IiB5PSI2IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiPgo8cGF0aCBkPSJNMTAgMkwxOCAxMEwxMCAxOEwyIDEwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cjwvc3ZnPg==">
+    <link rel="icon" type="image/svg+xml" href="./Assets/Icon.png">
     <style>
         * {
             margin: 0;
@@ -40,10 +41,27 @@
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #60a5fa;
+            display: inline-block;
             text-decoration: none;
+        }
+
+        .logo-image {
+            height: auto;
+            width: 180px;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo:hover .logo-image {
+            opacity: 0.8;
+        }
+
+        /* Alternative styles for different sizes */
+        .logo-large .logo-image {
+            height: 60px;
+        }
+
+        .logo-small .logo-image {
+            height: 30px;
         }
 
         .nav-links {
@@ -241,6 +259,194 @@
             line-height: 1.6;
         }
 
+        /* Founders Section */
+        .founders {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            width: 100vw;
+        }
+
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .founder-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .founder-link:hover {
+            transform: translateY(-5px);
+        }
+
+        .founder-card {
+            background: white;
+            border-radius: 25px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border: 1px solid #f1f5f9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .founder-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(96, 165, 250, 0.05), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .founder-card:hover::before {
+            opacity: 1;
+            transform: rotate(45deg) translate(30px, 30px);
+        }
+
+        .founder-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 80px rgba(96, 165, 250, 0.15);
+        }
+
+        .founder-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            font-weight: bold;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(96, 165, 250, 0.3);
+        }
+
+        .founder-card h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .founder-role {
+            font-size: 1rem;
+            color: #60a5fa;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .founder-bio {
+            color: #64748b;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background: white;
+            width: 100vw;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .review-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #f1f5f9;
+            position: relative;
+        }
+
+        .review-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .review-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .review-stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1.5rem;
+            justify-content: center;
+        }
+
+        .star {
+            color: #fbbf24;
+            font-size: 1.2rem;
+        }
+
+        .review-text {
+            font-size: 1rem;
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-company {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
         /* Contact */
         .contact {
             background: linear-gradient(135deg, #0f172a, #1e293b);
@@ -349,6 +555,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -356,12 +563,23 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         /* Responsive */
         @media (max-width: 768px) {
+            .logo-image {
+                height: 35px;
+            }
+
             .nav-links {
                 display: none;
             }
@@ -378,7 +596,9 @@
                 font-size: 2rem;
             }
 
-            .services-grid {
+            .services-grid,
+            .founders-grid,
+            .reviews-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
@@ -394,15 +614,20 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
         <nav>
-            <a href="#home" class="logo">A3R Business Solutions</a>
+            <a href="#home" class="logo">
+                <img src="./assets/transparent-logo.png" alt="A3R Business Solutions" class="logo-image">
+            </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#founders">Team</a></li>
+                <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -412,7 +637,8 @@
     <section id="home" class="banner">
         <div class="banner-content">
             <h1>Business Excellence Redefined</h1>
-            <p>We craft extraordinary Business experiences that transform businesses and captivate audiences through innovative design and cutting-edge technology.</p>
+            <p>We craft extraordinary Business experiences that transform businesses and captivate audiences through
+                innovative design and cutting-edge technology.</p>
             <a href="#services" class="cta-button">Explore Our Services</a>
         </div>
     </section>
@@ -422,8 +648,12 @@
         <div class="section-content">
             <h2 class="section-title">About Us</h2>
             <div class="about-content">
-                <p>At A3R Business, we're passionate pioneers in the Business realm, dedicated to pushing the boundaries of what's possible. Our team of creative visionaries and technical experts work tirelessly to deliver solutions that don't just meet expectations—they shatter them.</p>
-                <p>Founded on the principles of innovation, excellence, and client success, we've helped countless businesses transform their Business presence and achieve remarkable growth. Every project we undertake is an opportunity to create something extraordinary.</p>
+                <p>At A3R Business, we're passionate pioneers in the Business realm, dedicated to pushing the boundaries
+                    of what's possible. Our team of creative visionaries and technical experts work tirelessly to
+                    deliver solutions that don't just meet expectations—they shatter them.</p>
+                <p>Founded on the principles of innovation, excellence, and client success, we've helped countless
+                    businesses transform their Business presence and achieve remarkable growth. Every project we
+                    undertake is an opportunity to create something extraordinary.</p>
             </div>
         </div>
     </section>
@@ -436,43 +666,182 @@
                 <div class="service-card">
                     <div class="service-icon">🎨</div>
                     <h3>Creative Design</h3>
-                    <p>We craft visually stunning designs that capture your brand's essence and engage your audience. From logos to complete brand identities, we make your vision come alive with creative excellence.</p>
+                    <p>We craft visually stunning designs that capture your brand's essence and engage your audience.
+                        From logos to complete brand identities, we make your vision come alive with creative
+                        excellence.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">💻</div>
                     <h3>Web Development</h3>
-                    <p>Our development team builds responsive, fast, and secure websites that deliver exceptional user experiences. Using cutting-edge technologies, we create Business solutions that drive results.</p>
+                    <p>Our development team builds responsive, fast, and secure websites that deliver exceptional user
+                        experiences. Using cutting-edge technologies, we create Business solutions that drive results.
+                    </p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">📱</div>
                     <h3>Mobile Solutions</h3>
-                    <p>From native apps to progressive web applications, we develop mobile solutions that keep your users engaged and your business accessible anywhere, anytime.</p>
+                    <p>From native apps to progressive web applications, we develop mobile solutions that keep your
+                        users engaged and your business accessible anywhere, anytime.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🚀</div>
                     <h3>Business Strategy</h3>
-                    <p>We analyze your market, understand your goals, and develop comprehensive Business strategies that position your brand for sustainable growth and competitive advantage.</p>
+                    <p>We analyze your market, understand your goals, and develop comprehensive Business strategies that
+                        position your brand for sustainable growth and competitive advantage.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">📊</div>
                     <h3>Analytics & SEO</h3>
-                    <p>Data-driven insights and search engine optimization strategies that improve your online visibility, drive organic traffic, and maximize your Business ROI.</p>
+                    <p>Data-driven insights and search engine optimization strategies that improve your online
+                        visibility, drive organic traffic, and maximize your Business ROI.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🎯</div>
                     <h3>Business Marketing</h3>
-                    <p>Comprehensive marketing campaigns that reach your target audience through multiple channels, building brand awareness and driving meaningful conversions.</p>
+                    <p>Comprehensive marketing campaigns that reach your target audience through multiple channels,
+                        building brand awareness and driving meaningful conversions.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Founders Section -->
+    <section id="founders" class="founders">
+        <div class="section-content">
+            <h2 class="section-title">Meet Our Founders</h2>
+            <div class="founders-grid">
+                <a href="https://www.linkedin.com/in/aritrodatta/" target="_blank" class="founder-link">
+                    <div class="founder-card">
+                        <div class="founder-avatar">AD</div>
+                        <h3>Aritro Datta</h3>
+                        <div class="founder-role">CEO & Vision Architect</div>
+                        <p class="founder-bio">With over 15 years in digital innovation, Alex leads our strategic vision
+                            and drives technological excellence. A former Silicon Valley executive passionate about
+                            transforming businesses through cutting-edge solutions.</p>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/arko-datta/" target="_blank" class="founder-link">
+                    <div class="founder-card">
+                        <div class="founder-avatar">AD</div>
+                        <h3>Arko Datta</h3>
+                        <div class="founder-role">CFO & Creative Director</div>
+                        <p class="founder-bio">James combines artistic vision with strategic thinking to create
+                            compelling
+                            brand experiences. His award-winning designs have helped numerous companies establish
+                            powerful
+                            market presence and emotional connections.</p>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/avishekdutta99/" target="_blank" class="founder-link">
+                    <div class="founder-card">
+                        <div class="founder-avatar">AD</div>
+                        <h3>Avishek Dutta</h3>
+                        <div class="founder-role">CTO & Innovation Lead</div>
+                        <p class="founder-bio">Maya brings deep technical expertise and architectural brilliance to
+                            every
+                            project. Her background in AI and machine learning helps us stay ahead of emerging trends
+                            and
+                            deliver future-ready solutions.</p>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/rishab-roy-2b1026204/" target="_blank" class="founder-link">
+                    <div class="founder-card">
+                        <div class="founder-avatar">RR</div>
+                        <h3>Rishab Roy</h3>
+                        <div class="founder-role">COO & Growth Strategist</div>
+                        <p class="founder-bio">Sarah orchestrates our operations and client success initiatives. Her
+                            expertise in business development and strategic partnerships has been instrumental in our
+                            company's rapid growth and client satisfaction.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Reviews Section -->
+    <!-- <section id="reviews" class="reviews">
+        <div class="section-content">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="review-text">"A3R transformed our entire digital presence. Their innovative approach and attention to detail exceeded all expectations. Our conversion rates increased by 300% within three months!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar">DM</div>
+                        <div class="author-info">
+                            <h4>David Martinez</h4>
+                            <p class="author-company">CEO at TechFlow Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="review-text">"Working with A3R was a game-changer for our startup. They didn't just build us a website; they crafted a complete digital strategy that helped us secure Series A funding."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">EL</div>
+                        <div class="author-info">
+                            <h4>Emily Liu</h4>
+                            <p class="author-company">Founder at GreenTech Innovations</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="review-text">"The team at A3R is incredibly talented and professional. They took our complex requirements and delivered a solution that was both elegant and powerful. Highly recommended!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar">RT</div>
+                        <div class="author-info">
+                            <h4>Robert Thompson</h4>
+                            <p class="author-company">Director at Global Enterprises</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="review-text">"A3R's creative vision and technical expertise helped us rebrand completely. Our customer engagement has skyrocketed, and we've seen unprecedented growth in our market share."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">AN</div>
+                        <div class="author-info">
+                            <h4>Anna Novak</h4>
+                            <p class="author-company">Marketing Director at StyleHub</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
 
     <!-- Contact -->
     <section id="contact" class="contact">
         <div class="section-content">
             <h2 class="section-title">Contact Us</h2>
             <div class="contact-content">
-                <p>Ready to transform your Business presence? Let's discuss how we can help bring your vision to life and achieve your business goals.</p>
+                <p>Ready to transform your Business presence? Let's discuss how we can help bring your vision to life
+                    and achieve your business goals.</p>
                 <form class="contact-form">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
@@ -491,6 +860,8 @@
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
+                <a href="#founders">Team</a>
+                <a href="#reviews">Reviews</a>
                 <a href="#contact">Contact</a>
             </div>
             <p>&copy; 2025 A3R Business. All rights reserved. Crafted with passion and precision.</p>
@@ -523,16 +894,16 @@
         });
 
         // Form submission with Google Sheets integration
-        document.querySelector('.contact-form').addEventListener('submit', async function(e) {
+        document.querySelector('.contact-form').addEventListener('submit', async function (e) {
             e.preventDefault();
-            
+
             const submitBtn = this.querySelector('.submit-btn');
             const originalText = submitBtn.textContent;
-            
+
             // Show loading state
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
-            
+
             // Get form data
             const formData = new FormData(this);
             const data = {
@@ -542,11 +913,11 @@
                 message: formData.get('message'),
                 timestamp: new Date().toISOString()
             };
-            
+
             try {
                 // Replace 'YOUR_GOOGLE_APPS_SCRIPT_URL' with your actual Google Apps Script URL
                 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyInhHm32IA2cj5HCugb1lqLQcnJ_c3HIuRdvmzWzvc8GmuEpwOweqkHWRYLQyuQGNC5g/exec';
-                
+
                 const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
@@ -555,11 +926,11 @@
                     },
                     body: JSON.stringify(data)
                 });
-                
+
                 // Show success message
                 alert('Thank you for your message! We\'ll get back to you soon.');
                 this.reset();
-                
+
             } catch (error) {
                 console.error('Error:', error);
                 alert('Sorry, there was an error sending your message. Please try again.');
@@ -570,13 +941,13 @@
             }
         });
 
-        // Animate service cards on scroll
+        // Animate elements on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
@@ -592,6 +963,23 @@
             card.style.transition = `all 0.6s ease ${index * 0.1}s`;
             observer.observe(card);
         });
+
+        // Observe founder cards
+        document.querySelectorAll('.founder-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `all 0.6s ease ${index * 0.15}s`;
+            observer.observe(card);
+        });
+
+        // Observe review cards
+        document.querySelectorAll('.review-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(card);
+        });
     </script>
 </body>
+
 </html>
